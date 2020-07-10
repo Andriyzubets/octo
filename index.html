@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Octo.beer</title>
+    <script src="js/main.js" defer></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/zqu4wms.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header__imgBox">
+            <img class="header__logo" src="./img/logo.png" alt="Logo">
+        </div>
+        <div class="header__contacts">
+            <p>For any proposition or cooperaton please call: <span>79-447-669 Taras</span></p>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="main__imgBox">
+            <img src="./img/usPhoto.png" alt="Team Photo">
+        </div>
+
+        <div class="main__buttons">
+            <a class="main__tablink eng" onclick="tabSelect('eng')">ENG</a>
+            <a class="main__tablink active ru" onclick="tabSelect('ru')">РУС</a>
+            <a class="main__tablink gr" onclick="tabSelect('gr')">GR</a>
+        </div>
+        
+        <div id="eng" class="main__tabcontent">
+            <p>Hello!</p>
+            <p>
+                Well…  Only few people know about us so far, but you are among the chosen ones. 
+                This site is under active construction now. And we can’t wait to to tell you more about our beer, but we still need a little time. You know those programmers and designers — they do love our beer, but 24 hours a day is not enough for them! 
+                Follow us on Facebook and Instagram to receive our news and updates.  Also you can subscribe to our Telegram channel.
+                You can already taste OCTO beer at our brewery
+            </p>
+        </div>
+        
+        <div id="ru" class="main__tabcontent" style="display: block">
+            <p>Привет!</p>
+            <p> 
+                Хм)) О нас пока мало кто знает, но ты в числе избранных. 
+                Мы сей час активно готовим этот сайт что бы больше рассказать о нашем пиве, но нам еще нужно чуть чуть времени. Ты же знаешь, эти програмисты и дизайнеры конечно любят наше пиво но им вечно не хватает 24х часов в сутках!<br><br>
+                Пока следи за новостями на нашей странице в FB и в Instagram и подписывайся на канал в Telegram<br><br>
+                А само OCTO пиво пожно попробовать на нашей пивоварне ;)
+            </p> 
+        </div>
+        
+        <div id="gr" class="main__tabcontent">
+            <p>Γειά σας!</p>
+            <p>
+                Ελάχιστοι γνωρίζουν για εμάς αλλά είσαστε ανάμεσα στους εκλεκτούς.
+                Αυτή η ιστοσελίδα είναι υπό κατασκευή. Ανυπομονούμε να σας μιλήσουμε για μτην μπύρα μας αλλά θέλουμε ακόμα λίγο χρόνο.
+                Ξέρετε αυτούς τους προραμματιστές και σχεδιαστές - λατρεύουν την μπύρα μας αλλά 24 ώρες δεν είναι αρκετές για αυτούς!
+                Ακολουθείστε μας στο Facebook και στο Instagram για να ενημερώνεστε για τα νέα μας. Επίσης μπορείτε να εγγραφείτε και στο Telegram κανάλι μας.
+            Μπορείτε να δοκιμάσετε την OCTO μπύρα μας στο ζυθοποιείο μας  (wink)</p>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+
+    </footer>
+
+</body>
+</html>
