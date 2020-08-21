@@ -93,12 +93,12 @@
 
     let ru_thumb = slider.querySelector('.thumb');
     if(document.body.clientWidth < 1025){
-        ru_thumb.touchstart = function(event) {
+        ru_thumb.ontouchstart = function(event) {
             event.preventDefault();
             let shiftX = event.clientX - ru_thumb.getBoundingClientRect().left;
 
-            document.addEventListener('touchmove', onMouseMove);
-            document.addEventListener('touchend', onMouseUp);
+            document.addEventListener('ontouchmove', onMouseMove);
+            document.addEventListener('ontouchend', onMouseUp);
 
             function onMouseMove(event) {
                 let newLeft = event.clientX - shiftX - slider.getBoundingClientRect().left;
@@ -119,8 +119,8 @@
             }
 
             function onMouseUp() {
-                document.removeEventListener('touchmove', onMouseUp);
-                document.removeEventListener('touchend', onMouseMove);
+                document.removeEventListener('ontouchmove', onMouseUp);
+                document.removeEventListener('ontouchend', onMouseMove);
             }
 
         };
