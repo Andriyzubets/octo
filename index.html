@@ -92,7 +92,7 @@
 <script>
 
     let ru_thumb = slider.querySelector('.thumb');
-    if(window.client.width < 1025){
+    if(document.body.clientWidth < 1025){
         ru_thumb.touchstart = function(event) {
             event.preventDefault();
             let shiftX = event.clientX - ru_thumb.getBoundingClientRect().left;
