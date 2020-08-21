@@ -103,7 +103,7 @@
             function onMouseMove(event) {
 
                 let newLeft = event.clientX - shiftX - slider.getBoundingClientRect().left;
-                console.log(newLeft);
+                console.log(event);
                 console.log(event.changedTouches);
                 if (newLeft < 0) {
                     newLeft = 0;
