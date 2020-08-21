@@ -39,7 +39,7 @@
             cursor: pointer;
         }
         h3 {
-            font-size: 24px;
+            font-size: 20px;
             text-align: center;
             line-height: 1.5;
         }
@@ -56,7 +56,7 @@
 
     <main class="main">
 
-     <h3>
+       <h3>
         If you are over 18, move to the right.
     </h3>
     <h3>
@@ -81,14 +81,15 @@
         ru_thumb.ontouchstart = function(event) {
             event.preventDefault();
             let shiftX = event.changedTouches.clientX - ru_thumb.getBoundingClientRect().left;
-
+            console.log(event.changedTouches.clientX);
+            console.log(ru_thumb.getBoundingClientRect().left);
             document.addEventListener('touchmove', onMouseMove);
             document.addEventListener('touchend', onMouseUp);
 
 
             function onMouseMove(event) {
                 console.log('333');
-                console.log(shiftX);
+                
                 let newLeft = event.changedTouches.clientX - shiftX - slider.getBoundingClientRect().left;
 
                 console.log(event.changedTouches);
