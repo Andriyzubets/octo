@@ -102,11 +102,12 @@
 
 
             function onMouseMove(event) {
-                console.log('ttt');
+                console.log('eee');
 
                 let newLeft = event.changedTouches.clientX - shiftX - slider.getBoundingClientRect().left;
 
                 console.log(event.changedTouches);
+                console.log(newLeft);
                 if (newLeft < 0) {
                     newLeft = 0;
                 }
@@ -114,11 +115,12 @@
                 if (newLeft > rightEdge) {
                     newLeft = rightEdge;
                 }
-
+                console.log(rightEdge);
                 ru_thumb.style.left = newLeft + 'px';
                 var bord = +slider.offsetWidth;
+                console.log(bord);
                 if((bord - newLeft) < 40) {
-                    window.location.href="https://octo.beer";
+                    window.location.href="https://octo.beer/en/main-page-craftbeer-microbrewery/";
                 }
             }
 
@@ -154,7 +156,7 @@
                 ru_thumb.style.left = newLeft + 'px';
                 var bord = +slider.offsetWidth;
                 if((bord - newLeft) < 40) {
-                    window.location.href="https://octo.beer";
+                    window.location.href="https://octo.beer/en/main-page-craftbeer-microbrewery/";
                 }
             }
 
