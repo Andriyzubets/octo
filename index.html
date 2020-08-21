@@ -78,21 +78,20 @@
 
     let ru_thumb = slider.querySelector('.thumb');
     if(document.body.clientWidth < 1025){
-        console.log('000');
+        console.log('qqq')
         ru_thumb.ontouchstart = function(event) {
+            console.log('www')
             event.preventDefault();
-            console.log('111');
             let shiftX = event.changedTouches.clientX - ru_thumb.getBoundingClientRect().left;
-
             console.log(event.changedTouches.clientX);
-            console.log(ru_thumb.getBoundingClientRect().left);
+            console.log('ppp')
 
             document.addEventListener('touchmove', onMouseMove);
             document.addEventListener('touchend', onMouseUp);
 
 
             function onMouseMove(event) {
-                console.log('444');
+                console.log('333');
                 
                 let newLeft = event.changedTouches.clientX - shiftX - slider.getBoundingClientRect().left;
 
