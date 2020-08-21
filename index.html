@@ -95,17 +95,17 @@
     if(document.body.clientWidth < 1025){
         ru_thumb.ontouchstart = function(event) {
             event.preventDefault();
-            let shiftX = event.clientX - ru_thumb.getBoundingClientRect().left;
+            let shiftX = event.changedTouches.clientX - ru_thumb.getBoundingClientRect().left;
 
             document.addEventListener('touchmove', onMouseMove);
             document.addEventListener('touchend', onMouseUp);
-            console.log('in');
+
 
             function onMouseMove(event) {
-                console.log('rerer');
+                console.log('ttt');
 
-                let newLeft = event.clientX - shiftX - slider.getBoundingClientRect().left;
-                console.log(event);
+                let newLeft = event.changedTouches.clientX - shiftX - slider.getBoundingClientRect().left;
+
                 console.log(event.changedTouches);
                 if (newLeft < 0) {
                     newLeft = 0;
