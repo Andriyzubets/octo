@@ -64,7 +64,7 @@
         </div>
         
         <div id="eng" class="main__tabcontent">
-         <h3>
+           <h3>
             If you are over 18, move to the right.
         </h3>
     </div>
@@ -76,7 +76,7 @@
     </div>
 
     <div id="gr" class="main__tabcontent">
-     <h3>
+       <h3>
         Αν είσαι πάνω από 18 Σάρωσε δεξιά
     </h3>
 </div>
@@ -99,11 +99,12 @@
 
             document.addEventListener('touchmove', onMouseMove);
             document.addEventListener('touchend', onMouseUp);
+            console.log('in');
 
             function onMouseMove(event) {
+                console.log('rerer');
 
                 let newLeft = event.clientX - shiftX - slider.getBoundingClientRect().left;
-                console.log('rerer');
                 console.log(event);
                 console.log(event.changedTouches);
                 if (newLeft < 0) {
