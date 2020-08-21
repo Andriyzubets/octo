@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Octo.beer</title>
-    <script src="js/main.js" defer></script>
+    <!-- <script src="js/main.js" defer></script> -->
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://use.typekit.net/zqu4wms.css">
     <style>
@@ -15,7 +15,7 @@
             background: linear-gradient(left top, #E0E0E0, #EEEEEE);
             width: 310px;
             height: 15px;
-            margin: 20px 10px;
+            margin: 50px 10px 0;
             position: relative;
         }
         .slider:after {
@@ -40,9 +40,8 @@
         }
         h3 {
             font-size: 24px;
-            margin-top: 20px;
-            margin-bottom: 40px;
             text-align: center;
+            line-height: 1.5;
         }
     </style>
 </head>
@@ -57,32 +56,18 @@
 
     <main class="main">
 
-        <div class="main__buttons">
-            <a class="main__tablink eng" onclick="tabSelect('eng')">ENG</a>
-            <a class="main__tablink active ru" onclick="tabSelect('ru')">РУС</a>
-            <a class="main__tablink gr" onclick="tabSelect('gr')">GR</a>
-        </div>
-        
-        <div id="eng" class="main__tabcontent">
-           <h3>
-            If you are over 18, move to the right.
-        </h3>
-    </div>
-
-    <div id="ru" class="main__tabcontent" style="display: block">
-        <h3>
-            Если тебе больше 18, двигай вправо. 
-        </h3>
-    </div>
-
-    <div id="gr" class="main__tabcontent">
-       <h3>
+     <h3>
+        If you are over 18, move to the right.
+    </h3>
+    <h3>
         Αν είσαι πάνω από 18 Σάρωσε δεξιά
     </h3>
-</div>
-<div id="slider" class="slider">
-    <div class="thumb"></div>
-</div>
+    <h3>
+        Если тебе больше 18, двигай вправо. 
+    </h3>
+    <div id="slider" class="slider">
+        <div class="thumb"></div>
+    </div>
 
 </main>
 
