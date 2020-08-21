@@ -78,12 +78,12 @@
 
     let ru_thumb = slider.querySelector('.thumb');
     if(document.body.clientWidth < 1025){
-        console.log('qqq')
+        console.log('aaa')
         ru_thumb.ontouchstart = function(event) {
             console.log('sss')
             event.preventDefault();
             let shiftX = event.changedTouches.clientX - ru_thumb.getBoundingClientRect().left;
-            console.log(event.changedTouches);
+            console.log(event.changedTouches[0]);
             console.log('ddd')
 
             document.addEventListener('touchmove', onMouseMove);
