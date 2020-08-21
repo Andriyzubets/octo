@@ -99,8 +99,9 @@
 
             document.addEventListener('ontouchmove', onMouseMove);
             document.addEventListener('ontouchend', onMouseUp);
-
+            console.log('in')
             function onMouseMove(event) {
+                console.log('ttt');
                 let newLeft = event.clientX - shiftX - slider.getBoundingClientRect().left;
 
                 if (newLeft < 0) {
