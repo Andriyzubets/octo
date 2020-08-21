@@ -101,9 +101,10 @@
             document.addEventListener('touchend', onMouseUp);
 
             function onMouseMove(event) {
-                console.log('ttt');
-                let newLeft = event.clientX - shiftX - slider.getBoundingClientRect().left;
 
+                let newLeft = event.clientX - shiftX - slider.getBoundingClientRect().left;
+                console.log(newLeft);
+                console.log(event.changedTouches);
                 if (newLeft < 0) {
                     newLeft = 0;
                 }
