@@ -78,15 +78,18 @@
 
     let ru_thumb = slider.querySelector('.thumb');
     if(document.body.clientWidth < 1025){
+        console.log('000');
         ru_thumb.ontouchstart = function(event) {
             event.preventDefault();
+            console.log('111');
             let shiftX = event.changedTouches.clientX - ru_thumb.getBoundingClientRect().left;
+
             console.log(event.changedTouches.clientX);
             console.log(ru_thumb.getBoundingClientRect().left);
+
             document.addEventListener('touchmove', onMouseMove);
             document.addEventListener('touchend', onMouseUp);
 
-                console.log('111');
 
             function onMouseMove(event) {
                 console.log('444');
