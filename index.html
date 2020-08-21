@@ -8,6 +8,43 @@
     <script src="js/main.js" defer></script>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://use.typekit.net/zqu4wms.css">
+    <style>
+        .slider {
+            border-radius: 5px;
+            background: #E0E0E0;
+            background: linear-gradient(left top, #E0E0E0, #EEEEEE);
+            width: 310px;
+            height: 15px;
+            margin: 20px 10px;
+            position: relative;
+        }
+        .slider:after {
+            content:"";
+            width: 30px;
+            height: 50px;
+            background: url(img/glass1.png) 50% / contain no-repeat;
+            position: absolute;
+            right: 0;
+            top: -18px;
+            opacity: .3;
+        }
+
+        .thumb {
+            width: 30px;
+            height: 50px;
+            background: url(img/glass1.png) 50% / contain no-repeat;
+            position: relative;
+            left: 10px;
+            top: -18px;
+            cursor: pointer;
+        }
+        h3 {
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
@@ -15,15 +52,10 @@
         <div class="header__imgBox">
             <img class="header__logo" src="./img/logo.png" alt="Logo">
         </div>
-        <div class="header__contacts">
-            <p>For any proposition or cooperaton please call: <span>79-447-669 Taras</span></p>
-        </div>
+
     </header>
 
     <main class="main">
-        <div class="main__imgBox">
-            <img src="./img/usPhoto.png" alt="Team Photo">
-        </div>
 
         <div class="main__buttons">
             <a class="main__tablink eng" onclick="tabSelect('eng')">ENG</a>
@@ -32,40 +64,74 @@
         </div>
         
         <div id="eng" class="main__tabcontent">
-            <p>Hello!</p>
-            <p>
-                Well…  Only few people know about us so far, but you are among the chosen ones. 
-                This site is under active construction now. And we can’t wait to to tell you more about our beer, but we still need a little time. You know those programmers and designers — they do love our beer, but 24 hours a day is not enough for them! 
-                Follow us on Facebook and Instagram to receive our news and updates.  Also you can subscribe to our Telegram channel.
-                You can already taste OCTO beer at our brewery
-            </p>
-        </div>
-        
-        <div id="ru" class="main__tabcontent" style="display: block">
-            <p>Привет!</p>
-            <p> 
-                Хм)) О нас пока мало кто знает, но ты в числе избранных. 
-                Мы сей час активно готовим этот сайт что бы больше рассказать о нашем пиве, но нам еще нужно чуть чуть времени. Ты же знаешь, эти програмисты и дизайнеры конечно любят наше пиво но им вечно не хватает 24х часов в сутках!<br><br>
-                Пока следи за новостями на нашей странице в FB и в Instagram и подписывайся на канал в Telegram<br><br>
-                А само OCTO пиво пожно попробовать на нашей пивоварне ;)
-            </p> 
-        </div>
-        
-        <div id="gr" class="main__tabcontent">
-            <p>Γειά σας!</p>
-            <p>
-                Ελάχιστοι γνωρίζουν για εμάς αλλά είσαστε ανάμεσα στους εκλεκτούς.
-                Αυτή η ιστοσελίδα είναι υπό κατασκευή. Ανυπομονούμε να σας μιλήσουμε για μτην μπύρα μας αλλά θέλουμε ακόμα λίγο χρόνο.
-                Ξέρετε αυτούς τους προραμματιστές και σχεδιαστές - λατρεύουν την μπύρα μας αλλά 24 ώρες δεν είναι αρκετές για αυτούς!
-                Ακολουθείστε μας στο Facebook και στο Instagram για να ενημερώνεστε για τα νέα μας. Επίσης μπορείτε να εγγραφείτε και στο Telegram κανάλι μας.
-            Μπορείτε να δοκιμάσετε την OCTO μπύρα μας στο ζυθοποιείο μας  (wink)</p>
-        </div>
+           <h3>
+            If you are over 18, move to the right.
+        </h3>
+    </div>
 
-    </main>
+    <div id="ru" class="main__tabcontent" style="display: block">
+        <h3>
+            Если тебе больше 18, двигай вправо. 
+        </h3>
+    </div>
 
-    <footer class="footer">
+    <div id="gr" class="main__tabcontent">
+       <h3>
+        Αν είσαι πάνω από 18 Σάρωσε δεξιά
+    </h3>
+</div>
+<div id="slider" class="slider">
+    <div class="thumb"></div>
+</div>
 
-    </footer>
+</main>
 
+<footer class="footer">
+
+</footer>
+<script>
+
+    let ru_thumb = slider.querySelector('.thumb');
+
+    ru_thumb.onmousedown = function(event) {
+      event.preventDefault(); // предотвратить запуск выделения (действие браузера)
+
+      let shiftX = event.clientX - ru_thumb.getBoundingClientRect().left;
+      // shiftY здесь не нужен, слайдер двигается только по горизонтали
+
+      document.addEventListener('mousemove', onMouseMove);
+      document.addEventListener('mouseup', onMouseUp);
+
+      function onMouseMove(event) {
+        let newLeft = event.clientX - shiftX - slider.getBoundingClientRect().left;
+
+        // курсор вышел из слайдера => оставить бегунок в его границах.
+        if (newLeft < 0) {
+          newLeft = 0;
+      }
+      let rightEdge = slider.offsetWidth - ru_thumb.offsetWidth;
+      if (newLeft > rightEdge) {
+          newLeft = rightEdge;
+      }
+
+      ru_thumb.style.left = newLeft + 'px';
+      var bord = +slider.offsetWidth;
+      if((bord - newLeft) < 40) {
+          document.location.reload(true);
+      }
+  }
+
+  function onMouseUp() {
+    document.removeEventListener('mouseup', onMouseUp);
+    document.removeEventListener('mousemove', onMouseMove);
+}
+
+};
+
+ru_thumb.ondragstart = function() {
+  return false;
+};
+
+</script>
 </body>
 </html>
