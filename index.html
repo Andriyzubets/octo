@@ -78,11 +78,11 @@
 
     let ru_thumb = slider.querySelector('.thumb');
     if(document.body.clientWidth < 1025){
-        console.log('zzz')
+        console.log('qqq')
         ru_thumb.ontouchstart = function(event) {
             console.log('sss')
             event.preventDefault();
-            let shiftX = event.changedTouches.clientX - ru_thumb.getBoundingClientRect().left;
+            let shiftX = event.changedTouches[0].clientX - ru_thumb.getBoundingClientRect().left;
             console.log(event.changedTouches[0].clientX);
             console.log('ddd')
 
@@ -93,7 +93,7 @@
             function onMouseMove(event) {
                 console.log('333');
                 
-                let newLeft = event.changedTouches.clientX - shiftX - slider.getBoundingClientRect().left;
+                let newLeft = event.changedTouches[0].clientX - shiftX - slider.getBoundingClientRect().left;
 
                 console.log(event.changedTouches);
                 console.log(newLeft);
