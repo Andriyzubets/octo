@@ -3,17 +3,35 @@
 <head>
 	<meta charset="UTF-8">
 	<title>OctoMicrobrewery</title>
+	<style>
+		div {
+			display: flex;
+			justify-content: center;
+			margin-top: 60px;
+		}
+		div a {
+			padding: 12px 30px;
+			border-radius: 40px;
+			background: #e6bf55;
+			color:#fff;
+			font-size: 20px;
+			font-family: sans-serif;
+		}
+	</style>
 </head>
 <body>
-	<h1>
-		Hello
-	</h1>
-	<p>
-		redirecting...
-	</p>
+	<header class="header">
+        <div class="header__imgBox">
+            <img class="header__logo" src="./img/logo.png" alt="Logo">
+        </div>
+
+    </header>
+	<div>
+		<a href="https://octo.beer/show-locations/">Show all locations</a>
+	</div>
 	<script>
 		// setTimeout(function(){
-			window.location.href = "https://octo.beer/show-locations/";
+			// window.location.href = "https://octo.beer/show-locations/";
 		// },5000)
 	</script>
 </body>
